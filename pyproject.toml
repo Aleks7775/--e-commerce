@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "PythonProject6"
+version = "0.1.0"
+description = ""
+authors = ["Aleksandr <feat9999@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest-cov = "^6.1.1"
+
+
+[tool.poetry.group.lint.dependencies]
+flake8 = "^7.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
