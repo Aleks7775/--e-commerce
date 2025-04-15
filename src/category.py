@@ -14,7 +14,8 @@ class Category:
 
     def __str__(self):
         """Отображает название и общее количество продуктов"""
-        return f"{self.name}, количество продуктов: {len(self.__products)} шт."
+        total_quantity = sum(product.quantity for product in self.__products)
+        return f"{self.name}, количество продуктов: {total_quantity} шт.\n"
 
     def add_product(self, product):
         """Метод для добавления продуктов"""
