@@ -19,4 +19,4 @@ def test_product_list_property(first_category):
 
 def test_category_str(first_category):
     """Тест для проверки отображения правильного название и общее количество продуктов"""
-    assert str(first_category) == "Смартфоны, количество продуктов: 2 шт."
+    assert str(first_category) == "Смартфоны, количество продуктов: 19 шт.\n"
