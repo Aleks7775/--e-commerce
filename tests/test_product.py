@@ -32,6 +32,3 @@ def test_str_product(product, product2):
 def test_add_category(product, product2):
     """Тест для проверки сложения общего quantity"""
     assert product + product2 == 2580000.0
-
-
-
