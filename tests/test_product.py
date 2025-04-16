@@ -21,3 +21,14 @@ def test_product_create(capsys):
     product1.price = -100
     message = capsys.readouterr()
     assert message.out.strip() == "Цена не должна быть нулевая или отрицательная"
+
+
+def test_str_product(product, product2):
+    """Тест для проверки правильного отображения метода __str__"""
+    assert str(product) == "Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт."
+    assert str(product2) == "Iphone 15, 210000.0 руб. Остаток: 8 шт."
+
+
+def test_add_category(product, product2):
+    """Тест для проверки сложения общего quantity"""
+    assert product + product2 == 2580000.0
