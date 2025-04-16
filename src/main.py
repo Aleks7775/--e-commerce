@@ -61,27 +61,25 @@ if __name__ == '__main__':
     grass_sum = grass1 + grass2
     print(grass_sum)
 
+    try:
+        invalid_sum = smartphone1 + grass1
+    except TypeError:
+        print("Возникла ошибка TypeError при попытке сложения разных классов продуктов")
+    else:
+        print("Не возникла ошибка TypeError при попытке сложения")
 
+    category_smartphones = Category("Смартфоны", "Высокотехнологичные смартфоны", [smartphone1, smartphone2])
+    category_grass = Category("Газонная трава", "Различные виды газонной травы", [grass1, grass2])
 
-    # try:
-    #     invalid_sum = smartphone1 + grass1
-    # except TypeError:
-    #     print("Возникла ошибка TypeError при попытке сложения разных классов")
-    # else:
-    #     print("Не возникла ошибка TypeError при попытке сложения разных классов")
-    #
-    # category_smartphones = Category("Смартфоны", "Высокотехнологичные смартфоны", [smartphone1, smartphone2])
-    # category_grass = Category("Газонная трава", "Различные виды газонной травы", [grass1, grass2])
-    #
-    # category_smartphones.add_product(smartphone3)
-    #
-    # print(category_smartphones.products)
-    #
-    # print(Category.product_count)
-    #
-    # try:
-    #     category_smartphones.add_product("Not a product")
-    # except TypeError:
-    #     print("Возникла ошибка TypeError при добавлении не продукта")
-    # else:
-    #     print("Не возникла ошибка TypeError при добавлении не продукта")
+    category_smartphones.add_product(smartphone3)
+
+    print(category_smartphones.products)
+
+    print(Category.product_count)
+
+    try:
+        category_smartphones.add_product("Not a product")
+    except TypeError:
+        print("Возникла ошибка TypeError при добавлении не продукта")
+    else:
+        print("Не возникла ошибка TypeError при добавлении не продукта")
