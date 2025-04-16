@@ -16,7 +16,9 @@ class Product:
 
     def __add__(self, other):
         """функция для получения всех товаров на складе"""
-        return self.__price * self.quantity + other.__price * other.quantity
+        if type(other) is Product:
+            return self.__price * self.quantity + other.__price * other.quantity
+        raise TypeError
 
     @classmethod
     def new_product(cls, product_data):
