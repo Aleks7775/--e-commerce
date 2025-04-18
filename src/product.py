@@ -1,4 +1,8 @@
-class Product:
+from src.base_product import BaseProduct
+from src.log_mixin import MixinLog
+
+
+class Product(BaseProduct, MixinLog):
     name: str
     description: str
     price: float
@@ -9,6 +13,7 @@ class Product:
         self.description = description
         self.__price = price
         self.quantity = quantity
+        super().__init__()
 
     def __str__(self):
         """Отображает название цену и остаток"""
