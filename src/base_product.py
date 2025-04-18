@@ -1,6 +1,8 @@
 from abc import ABC, abstractmethod
 
+
 class BaseProduct(ABC):
+    """Создан базовый абстрактный класс"""
 
     @classmethod
     @abstractmethod
