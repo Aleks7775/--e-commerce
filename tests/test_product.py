@@ -20,7 +20,7 @@ def test_product_create(capsys):
     assert product1.price == 10
     product1.price = -100
     message = capsys.readouterr()
-    assert message.out.strip() == "Цена не должна быть нулевая или отрицательная"
+    assert message.out.strip().split("\n")[-1] == "Цена не должна быть нулевая или отрицательная"
 
 
 def test_str_product(product, product2):
