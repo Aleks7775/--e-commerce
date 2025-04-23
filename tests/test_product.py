@@ -1,3 +1,5 @@
+import pytest
+
 from src.product import Product
 
 
@@ -32,3 +34,9 @@ def test_str_product(product, product2):
 def test_add_category(product, product2):
     """Тест для проверки сложения общего quantity"""
     assert product + product2 == 2580000.0
+
+
+def test_zero_product():
+    """Тестирование возникновения исключения ValueError"""
+    with pytest.raises(ValueError) as e_info:
+        Product("Бракованный товар", "Неверное количество", 1000.0, 0)

@@ -1,3 +1,4 @@
+from src.category import Category
 
 def test_product_init(first_category, second_category):
     assert first_category.name == "Смартфоны"
@@ -20,3 +21,11 @@ def test_product_list_property(first_category):
 def test_category_str(first_category):
     """Тест для проверки отображения правильного название и общее количество продуктов"""
     assert str(first_category) == "Смартфоны, количество продуктов: 19 шт.\n"
+
+
+def test_avg_category(first_category):
+    """Тестирование среднего ценника всех товаров и
+     когда в категории нет товаров будет возвращаться 0"""
+    assert first_category.middle_price() == 195000.0
+    category_empty = Category("Пустая категория", "Категория без продуктов", [])
+    assert category_empty.middle_price() == 0
